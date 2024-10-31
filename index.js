@@ -1,7 +1,6 @@
-import {writeFile} from 'fs/promises';
+import fs from 'fs';
 import inquirer from 'inquirer';
 
-// TODO: Create an array of questions for user input
 const askQuestions = () =>{
     return inquirer.prompt([
         {
@@ -86,11 +85,16 @@ GitHub: ${github}
 If you have additional questions, please contact me by email at ${email}`
 }
 
-// TODO: Create a function to write README file
-const writeToFile = (fileName, data) => {}
+const init = () => {
+    askQuestions()
+        .then(answers => {
+            //create dist folder if it doesn't exist
+            if(!fs.existsSync('./dist')) fs.mkdirSync('./dist')
+            
+            fs.promises.writeFile('./dist/README.md',generateMD(answers))
+        })
+        .then(() => console.log('Successfully wrote new README.md in dist directory...'))
+        .catch(err => console.log(err))
+}
 
-// TODO: Create a function to initialize app
-const init = () => {}
-
-// Function call to initialize app
 init();
