@@ -1,8 +1,10 @@
-# test
+# a
+
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-sample description
+a
 
 ## Table of Contents
 
@@ -15,25 +17,26 @@ sample description
 
 ## Installation
 
-sample installation instructions
+a
 
 ## Usage
 
-sample usage info
+a
 
 ## License
 
-MIT Liscense
+This project is covered under the MIT license.
 
 ## Contributing
 
-sample contribution guidelines
+a
 
 ## Tests
 
-sample test instructions
+a
 
 ## Questions
 
-GitHub: undefined
-If you have additional questions, please contact me by email at undefined
+GitHub: cablej02
+
+If you have additional questions, please contact me by email at a

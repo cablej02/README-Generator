@@ -1,6 +1,17 @@
 import fs from 'fs';
 import inquirer from 'inquirer';
 
+const licenses = {
+    MIT: "(https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)",
+    "Apache 2.0": "(https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/license/apache-2-0)",
+    "GPL v3": "(https://img.shields.io/badge/License-GPLv3-blue.svg)](https://opensource.org/license/gpl-3-0)",
+    "BSD 3-Clause": "(https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/license/bsd-3-clause)",
+    "MPL 2.0": "(https://img.shields.io/badge/License-MPL_2.0-orange.svg)](https://opensource.org/license/mpl-2-0)",
+    Unlicense: "(https://img.shields.io/badge/license-Unlicense-blue.svg)](https://opensource.org/license/unlicense)"
+};
+
+const licenseChoices = [...Object.keys(licenses),'No License'];
+
 const askQuestions = () =>{
     return inquirer.prompt([
         {
@@ -35,27 +46,48 @@ const askQuestions = () =>{
         },
         {
             type: 'list',
-            name: 'liscense',
-            message: 'Choose a liscense for your project: ',
-            choices: ['none','MIT Liscense','GNU GPLv3','GNU AGPLv3','GNU LGPLv3','Mozilla Public License 2.0','Apache License 2.0','Boost Software Liscense 1.0','The Unlicense']
+            name: 'license',
+            message: 'Choose a license for your project: ',
+            choices: licenseChoices
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Enter your GitHub username: '
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter your email address: '
         }
     ])
 }
 
-//TODO: verify table of contents is working
-const generateMD = ({title,description,installation,usage,liscense,contribute,tests, github, email}) =>{
+const generateREADMEContent = ({title,description,installation,usage,license,contribute,tests,github,email}) =>{
+    const licenseBadge = licenses[license] || '';
+    const licenseSection = license === 'No License' ? '':`## License
+
+This project is covered under the ${license} license.`
+
     return `# ${title}
 
-## Description
+` 
++ (license === 'No License' ? '' : `[![License]${licenseBadge}
+
+`) +
+
+`## Description
 
 ${description}
 
 ## Table of Contents
 
 - [Installation](#installation)
-- [Usage](#usage)
+- [Usage](#usage)`
++ (license === 'No License' ? '' : `
 - [License](#license)
-- [Contributing](#contributing)
+`) +
+`- [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
 
@@ -67,9 +99,7 @@ ${installation}
 
 ${usage}
 
-## License
-
-${liscense}
+` + licenseSection + `
 
 ## Contributing
 
@@ -82,6 +112,7 @@ ${tests}
 ## Questions
 
 GitHub: ${github}
+
 If you have additional questions, please contact me by email at ${email}`
 }
 
@@ -91,7 +122,7 @@ const init = () => {
             //create dist folder if it doesn't exist
             if(!fs.existsSync('./dist')) fs.mkdirSync('./dist')
             
-            fs.promises.writeFile('./dist/README.md',generateMD(answers))
+            fs.promises.writeFile('./dist/README.md',generateREADMEContent(answers))
         })
         .then(() => console.log('Successfully wrote new README.md in dist directory...'))
         .catch(err => console.log(err))
