@@ -6,12 +6,12 @@ const renderLicenseBadge = (license) => {
     return licenseInfo ? licenseInfo.badge + licenseInfo.url : '';
 }
 
-function renderLicenseLink(license) {
+const renderLicenseLink = (license) => {
    return license === 'No License' ? '' : licenses[license].url;
 }
 
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+const renderLicenseSection = (license) => {
     const licenseLink = renderLicenseLink(license);
     return license === 'No License' ? '':`## License
 
@@ -20,18 +20,15 @@ This project is covered under the [${license}]${licenseLink} license.
 `
 }
 
-function generateMarkdown({title,description,installation,usage,license,contribute,tests,github,email}) {
+const generateMarkdown = ({title,description,installation,usage,license,contribute,tests,github,email}) => {
     const licenseBadge = renderLicenseBadge(license);
     const licenseSection = renderLicenseSection(license);
 
     return `# ${title}
 
-` 
-+ (licenseBadge === '' ? '' : `${licenseBadge}
+${licenseBadge === 'No License' ? '' : `${licenseBadge}
 
-`) +
-
-`## Description
+`}## Description
 
 ${description}
 
@@ -39,9 +36,8 @@ ${description}
 
 - [Installation](#installation)
 - [Usage](#usage)
-`+ (license === 'No License' ? '' : `- [License](#license)
-`) +
-`- [Contributing](#contributing)
+${license === 'No License' ? '' : `- [License](#license)
+`}- [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
 
@@ -53,8 +49,7 @@ ${installation}
 
 ${usage}
 
-` + licenseSection + 
-`## Contributing
+${licenseSection}## Contributing
 
 ${contribute}
 

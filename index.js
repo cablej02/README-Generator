@@ -3,12 +3,15 @@ import inquirer from 'inquirer';
 import generateMarkdown from './utils/generateMarkdown.js';
 
 export const licenses = {
-    MIT: {badge:'[![License](https://img.shields.io/badge/License-MIT-blue.svg)]',url:'(https://opensource.org/licenses/MIT)'},
-    "Apache 2.0": {badge:'[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]',url:'(https://opensource.org/license/apache-2-0)'},
-    "GPL v3": {badge:'[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)]',url:'(https://opensource.org/license/gpl-3-0)'},
-    "BSD 3-Clause": {badge:'[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]',url:'(https://opensource.org/license/bsd-3-clause)'},
-    "MPL 2.0": {badge:'[![License](https://img.shields.io/badge/License-MPL_2.0-orange.svg)]',url:'(https://opensource.org/license/mpl-2-0)'},
-    Unlicense: {badge:'[![License](https://img.shields.io/badge/license-Unlicense-blue.svg)]',url:'(https://opensource.org/license/unlicense)'}
+    MIT: {badge:'[![License](https://img.shields.io/badge/License-MIT-blue.svg)]',url:'(https://choosealicense.com/licenses/mit/)'},
+    "Apache 2.0": {badge:'[![License](https://img.shields.io/badge/License-Apache_2.0-%23007FFF.svg)]',url:'(https://choosealicense.com/licenses/apache-2.0/)'},
+    "GPL v3": {badge:'[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)]',url:'(https://choosealicense.com/licenses/gpl-3.0/)'},
+    "AGPL v3": {badge:'[![License](https://img.shields.io/badge/License-AGPLv3-blue.svg)]',url:'(https://choosealicense.com/licenses/agpl-3.0/)'},
+    "LGPL v3": {badge:'[![License](https://img.shields.io/badge/License-LGPLv3-blue.svg)]',url:'(https://choosealicense.com/licenses/lgpl-3.0/)'},
+    "BSD 3": {badge:'[![License](https://img.shields.io/badge/License-BSD_3-green.svg)]',url:'(https://choosealicense.com/licenses/bsd-3-clause-clear/)'},
+    "MPL 2.0": {badge:'[![License](https://img.shields.io/badge/License-MPL_2.0-orange.svg)]',url:'(https://choosealicense.com/licenses/mpl-2.0/)'},
+    "BSL 1.0": {badge:'[![License](https://img.shields.io/badge/License-BSL_1.0-blue.svg)]',url:'(https://choosealicense.com/licenses/bsl-1.0/)'},
+    Unlicense: {badge:'[![License](https://img.shields.io/badge/License-Unlicense-blue.svg)]',url:'(https://choosealicense.com/licenses/unlicense/)'}
 };
 
 const licenseChoices = [...Object.keys(licenses),'No License'];
