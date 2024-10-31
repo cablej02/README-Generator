@@ -122,7 +122,7 @@ const init = () => {
             //create dist folder if it doesn't exist
             if(!fs.existsSync('./dist')) fs.mkdirSync('./dist')
             
-            fs.promises.writeFile('./dist/README.md',generateREADMEContent(answers))
+            return fs.promises.writeFile('./dist/README.md',generateREADMEContent(answers))
         })
         .then(() => console.log('Successfully wrote new README.md in dist directory...'))
         .catch(err => console.log(err))
