@@ -2,6 +2,7 @@ import fs from 'fs';
 import inquirer from 'inquirer';
 import generateMarkdown from './utils/generateMarkdown.js';
 
+export const noLicense = 'No License';
 export const licenses = {
     MIT: {badge:'[![License](https://img.shields.io/badge/License-MIT-blue.svg)]',url:'(https://choosealicense.com/licenses/mit/)'},
     "Apache 2.0": {badge:'[![License](https://img.shields.io/badge/License-Apache_2.0-%23007FFF.svg)]',url:'(https://choosealicense.com/licenses/apache-2.0/)'},
@@ -14,7 +15,7 @@ export const licenses = {
     Unlicense: {badge:'[![License](https://img.shields.io/badge/License-Unlicense-blue.svg)]',url:'(https://choosealicense.com/licenses/unlicense/)'}
 };
 
-const licenseChoices = [...Object.keys(licenses),'No License'];
+const licenseChoices = [...Object.keys(licenses),noLicense];
 
 const questions = [
     {

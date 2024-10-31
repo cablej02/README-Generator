@@ -1,4 +1,4 @@
-import {licenses} from '../index.js';
+import {licenses, noLicense} from '../index.js';
 
 // If there is no license, return an empty string
 const renderLicenseBadge = (license) => {
@@ -7,13 +7,13 @@ const renderLicenseBadge = (license) => {
 }
 
 const renderLicenseLink = (license) => {
-   return license === 'No License' ? '' : licenses[license].url;
+   return license === noLicense ? '' : licenses[license].url;
 }
 
 // If there is no license, return an empty string
 const renderLicenseSection = (license) => {
     const licenseLink = renderLicenseLink(license);
-    return license === 'No License' ? '':`## License
+    return license === noLicense ? '':`## License
 
 This project is covered under the [${license}]${licenseLink} license.
 
@@ -26,7 +26,7 @@ const generateMarkdown = ({title,description,installation,usage,license,contribu
 
     return `# ${title}
 
-${licenseBadge === 'No License' ? '' : `${licenseBadge}
+${licenseBadge === '' ? '' : `${licenseBadge}
 
 `}## Description
 
@@ -36,7 +36,7 @@ ${description}
 
 - [Installation](#installation)
 - [Usage](#usage)
-${license === 'No License' ? '' : `- [License](#license)
+${license === noLicense ? '' : `- [License](#license)
 `}- [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
