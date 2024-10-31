@@ -37,6 +37,6 @@ a
 
 ## Questions
 
-GitHub: a
+GitHub: [cablej02](https://github.com/cablej02)
 
-If you have additional questions, please contact me by email at a
+If you have additional questions, please contact me by email at [cablej02@gmail.com](mailto:cablej02@gmail.com)

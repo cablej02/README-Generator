@@ -111,9 +111,9 @@ ${tests}
 
 ## Questions
 
-GitHub: ${github}
+GitHub: [${github}](https://github.com/${github})
 
-If you have additional questions, please contact me by email at ${email}`
+If you have additional questions, please contact me by email at [${email}](mailto:${email})`
 }
 
 const init = () => {
