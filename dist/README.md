@@ -1,42 +1,35 @@
 # a
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
 ## Description
 
-a
+b
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
 
 ## Installation
 
-a
+c
 
 ## Usage
 
-a
-
-## License
-
-This project is covered under the MIT license.
+d
 
 ## Contributing
 
-a
+e
 
 ## Tests
 
-a
+f
 
 ## Questions
 
-GitHub: [cablej02](https://github.com/cablej02)
+GitHub: [asdf](https://github.com/asdf)
 
-If you have additional questions, please contact me by email at [cablej02@gmail.com](mailto:cablej02@gmail.com)
+If you have additional questions, please contact me by email at [asdf](mailto:asdf)
