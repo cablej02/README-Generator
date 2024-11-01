@@ -28,6 +28,8 @@ npm install
 
 ## Usage
 
+Follow this [walkthrough video](https://drive.google.com/file/d/1Iflc2XZxruf8gL6zuK65yrEKPZgVrZtO/view?usp=sharing) or the following instructions for usage:
+
 1. **Run the tool:** Start the README Generator by running the following command in your terminal:
 ```bash
 node index.js
